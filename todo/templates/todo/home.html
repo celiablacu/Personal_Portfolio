@@ -1,0 +1,25 @@
+
+{% extends "todo/base.html" %}
+{% load static %}
+{% block content %}
+  <input type="hidden" name="previous" value="{{ request.path }}">
+<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-7 text-center">
+          <img src="{% static 'todo/todo.png' %}" height="200" />
+          <h1>Welcome to Celia's TODO App!</h1>
+          <p>It is time to get you organized!</p>
+
+          <a role="button" class="btn btn-info btn-lg" href="{% url 'todo:signupuser' %}">Start</a>
+          <a role="button" class="btn btn-info btn-lg" href="{% url 'generator:back' %}">Back</a>
+
+        </div>
+    </div>
+
+
+{% endblock %}

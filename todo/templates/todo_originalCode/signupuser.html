@@ -1,0 +1,31 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+
+<h1>Sign Up</h1>
+
+<!--
+GET sends fwd information to URLs, you use it when you read something
+an information already displayed in site
+POST also, but it keeps the information
+hidden, submits it separately so the sensitive information like
+a password doesnt show in the URL in browser
+in this case you are going to create something or take some action (deletes updates)
+
+-->
+
+<h2>{{ error }}</h2>
+<form method="POST">
+  <!-- CSRF token missing or incorrect.
+  #For POST forms, you need to ensure:
+  #Browser accept cookies
+  #The view function passes a request to the template’s render method.
+  #In the template, there is a {% csrf_token %} template tag inside each POST form that targets an internal URL.
+  -->
+  {% csrf_token %}
+
+  {{ form.as_p }}
+  <button type="submit">Sign Up</button>
+</form>
+
+{% endblock %}

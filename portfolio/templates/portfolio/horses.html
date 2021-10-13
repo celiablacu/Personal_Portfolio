@@ -1,0 +1,30 @@
+{% extends 'portfolio/base.html' %}
+
+{% load static %}
+
+<div class="container">
+  {% block content %}
+    <h1>Horses</h1>
+
+
+
+    <h2 class="mt-5">Competitions</h2>
+    <hr>
+    <div class="row">
+
+      <div class="col-lg-4 col-md-6">
+        <a href="https://docs.google.com/presentation/d/1y5Uf9FxpBtDTmslLWDkQVhUr0KlIVxM4/edit?usp=sharing&ouid=117935021627401236809&rtpof=true&sd=true" target="_blank">
+          About Us<br><img src="{% static 'portfolio/Caline1.jpg' %}" class="img-fluid" width=300 height=3  00>
+        </a>
+      </div>
+
+    <div class="col-lg-4 col-md-6">
+      <a href="https://www.youtube.com/channel/UC8NcSi_rD1aN8iqYeLL5-ww" target="_blank">
+        Our Trainings<br><img src="{% static 'portfolio/Pepper.jpg' %}" class="img-fluid" width=300 height=3  00>
+      </a>
+    </div>
+
+    </div>
+
+  {% endblock %}
+</div>

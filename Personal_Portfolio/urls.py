@@ -17,12 +17,21 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from todo import views
 from portfolio import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='home'),
     path('blog/',include('blog.urls')),
+    path('generator/',include('generator.urls'),name='generator'),
+    path('todo/',include('todo.urls'),name='todo'),
+    path('horses/',views.horses,name='horses'),
+    path('horses/',views.cats,name='cats'),
+    path('horses/',views.dogs,name='dogs'),
+    path('horses/',views.rescues,name='rescues'),
+    path('projects/',views.projects,name='projects'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

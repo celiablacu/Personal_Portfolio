@@ -1,0 +1,33 @@
+{% extends "todo/base.html" %}
+
+{% block content %}
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-10">
+            {% if todos %}
+                 <h1>You have {{ todos.count }} Outstanding Todo {{ todos.count|pluralize }}</h1>
+            {% else %}
+                           <h1>Current Todos</h1>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-10">
+        {% if todos %}
+            <div class="list-group">
+                {% for todo in todos %}
+                    <a href="{% url 'todo:viewtodo' todo.id %}"
+                      class="list-group-item list-group-item-action{% if todo.important %} list-group-item-warning{% endif %}">
+                      <b>{{ todo.title }}</b>{% if todo.memo %} - {{ todo.memo|truncatechars:30 }}{% endif %}
+                    </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="text-center">
+                <h2>It looks like you don't have any outstanding todo-es! Nice work.</h2>
+            <br>
+            <a role="button" class="btn btn-info" href="{% url 'todo:createtodo' %}">New Todo</a>
+            </div>
+        {% endif %}
+        </div>
+    </div>
+{% endblock %}
