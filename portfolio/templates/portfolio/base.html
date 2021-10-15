@@ -37,7 +37,7 @@
             <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Projects</button>
             <ul class="dropdown-menu">
               {% for project in projects %}
-                <li><a class="dropdown-item" href="{{ project.internalurl }}" target="_blank">
+                <li><a class="dropdown-item" href="{{ project.internalurl }}" target="_parent">
                    {{ project.title }}
                   <img src="{{ project.image.url }}" class="img-fluid mb-2" width="25" height="25">
 
@@ -56,7 +56,7 @@
             <a class="nav-link" href="https://twitter.com/cblacu" target="_blank">Twitter</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'blog:all_blogs' %}" target="_blank">Blog</a>
+            <a class="nav-link" href="{% url 'blog:all_blogs' %}" target="_parent">Blog</a>
           </li>
 
         <div class="input-group mb-3">
@@ -73,10 +73,10 @@
         <div class="input-group mb-3">
           <button class="btn btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Pets</button>
           <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{% url 'horses' %}" target="_blank">Horses</a></li>
-              <li><a class="dropdown-item" href="{% url 'dogs' %}" target="_blank">Dogs</a></li>
-              <li><a class="dropdown-item" href="{% url 'cats' %}" target="_blank">Cats</a></li>
-              <li><a class="dropdown-item" href="{% url 'rescues' %}" target="_blank">Recues</a></li>
+              <li><a class="dropdown-item" href="{% url 'horses' %}" target="_parent">Horses</a></li>
+              <li><a class="dropdown-item" href="#" target="_parent">Dogs</a></li>
+              <li><a class="dropdown-item" href="#" target="_parent">Cats</a></li>
+              <li><a class="dropdown-item" href="#" target="_parent">Recues</a></li>
           </ul>
         </div>
 
@@ -99,10 +99,12 @@
           </ul>
         </div>
 
+
         </ul>
       </div>
     </div>
   </nav>
+
   <div class="container">
     {% block content %}{% endblock %}
   </div>
